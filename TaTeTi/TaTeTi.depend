@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1572227126 source:/home/seba/Escritorio/TaTeTi/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1572229360 source:/home/seba/Escritorio/Juegos-en-C/TaTeTi/main.c
+	<stdio.h>
+	<stdlib.h>
+
