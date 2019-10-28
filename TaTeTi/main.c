@@ -32,7 +32,7 @@ void loop(char c[3][3]){
         j = ganador(c);
         i++;
 
-    }while(i <= 9 && j == 2);
+    }while(i < 9 && j == 2);
 
     system("clear");
         mostrar_tablero(c);
@@ -173,33 +173,32 @@ void intro_IA(char c[3][3]){
 int ganador(char c[3][3]){
     if(c[0][0] == 'X' || c[0][0] == 'O'){
         if(c[0][0] == c[0][1] && c[0][0] == c[0][2])
-            return (c[0][0] = 'X') ? 0 : 1; // Devuelve 0 si ganamos
+            return (c[0][0] == 'X') ? 0 : 1; // Devuelve 0 si ganamos
 
         if(c[0][0] == c[1][0] && c[0][0] == c[2][0])
-            return (c[0][0] = 'X') ? 0 : 1;
-
+            return (c[0][0] == 'X') ? 0 : 1;
     }
 
     if(c[1][1] == 'X' || c[1][1] == 'O'){
         if(c[1][1] == c[0][0] && c[1][1] == c[2][2])
-            return (c[1][1] = 'X') ? 0 : 1;
+            return (c[1][1] == 'X') ? 0 : 1;
 
         if(c[1][1] == c[1][0] && c[1][1] == c[1][2])
-            return (c[1][1] = 'X') ? 0 : 1;
+            return (c[1][1] == 'X') ? 0 : 1;
 
         if(c[1][1] == c[2][0] && c[1][1] == c[0][2])
-            return (c[1][1] = 'X') ? 0 : 1;
+            return (c[1][1] == 'X') ? 0 : 1;
 
-        if(c[1][1] == c[2][0] && c[0][1] == c[2][1])
-            return (c[1][1] = 'X') ? 0 : 1;
+        if(c[1][1] == c[0][1] && c[1][1] == c[2][1])
+            return (c[1][1] == 'X') ? 0 : 1;
     }
 
     if(c[2][2] == 'X' || c[2][2] == 'O'){
         if(c[2][2] == c[2][0] && c[2][2] == c[2][1])
-            return (c[2][2] = 'X') ? 0 : 1;
+            return (c[2][2] == 'X') ? 0 : 1;
 
         if(c[2][2] == c[0][2] && c[2][2] == c[1][2])
-            return (c[2][2] = 'X') ? 0 : 1;
+            return (c[2][2] == 'X') ? 0 : 1;
     }
 
     return 2;
