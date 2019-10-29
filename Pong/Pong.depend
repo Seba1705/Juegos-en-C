@@ -3,8 +3,25 @@
 	<stdio.h>
 	<stdlib.h>
 
-1572360906 source:c:\users\supervisor\desktop\juegos-en-c\pong\main.c
+1572369460 source:c:\users\supervisor\desktop\juegos-en-c\pong\main.c
 	<stdio.h>
 	<stdlib.h>
+	<conio.h>
 	<windows.h>
+	"game.c"
+
+1572369509 c:\users\supervisor\desktop\juegos-en-c\pong\game.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+
+1572369460 c:\users\supervisor\desktop\juegos-en-c\pong\game.h
+
+1572369601 source:c:\users\supervisor\desktop\juegos-en-c\pong\game.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	"game.h"
 
