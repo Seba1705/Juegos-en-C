@@ -16,7 +16,7 @@ int main(){
     iniJug = 8;
     finJug = 12;
     iniIA = 5;
-    finIA = 20;
+    finIA = 18;
 
     // Iniciar variables de modificacion
     modX = -1;

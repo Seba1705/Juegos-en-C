@@ -25,3 +25,19 @@
 	<windows.h>
 	"game.h"
 
+1572575164 source:c:\users\sebaa\desktop\juegos-en-c\pong\game.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	"game.h"
+
+1572573382 c:\users\sebaa\desktop\juegos-en-c\pong\game.h
+
+1572574538 source:c:\users\sebaa\desktop\juegos-en-c\pong\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	"game.h"
+

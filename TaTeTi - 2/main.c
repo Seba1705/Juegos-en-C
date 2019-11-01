@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 void loop(char c[3][3]);
 void iniciar_tablero(char c[3][3]);
 void mostrar_tablero(char c[3][3]);
-void poner_ficha(char c[3][3]);
-void intro_IA(char c[3][3]);
+void poner_ficha(char c[3][3], char ficha);
 int ganador(char c[3][3]);
 
 int main(){
@@ -14,11 +12,17 @@ int main(){
 
     loop(tablero);
 
+    system("pause");
     return 0;
 }
 
 void loop(char c[3][3]){
     int i = 0, j;
+    char jugador1[20], jugador2[20];
+    printf("Ingrese el nombre del jugador 1: ");
+    gets(jugador1);
+    printf("Ingrese el nombre del jugador 2: ");
+    gets(jugador2);
 
     iniciar_tablero(c);
 
@@ -26,7 +30,7 @@ void loop(char c[3][3]){
         system("cls");
         mostrar_tablero(c);
 
-        (i % 2 == 0) ? poner_ficha(c) : intro_IA(c);
+        (i % 2 == 0) ? poner_ficha(c, 'X') : poner_ficha(c, 'O');
 
         mostrar_tablero(c);
 
@@ -39,10 +43,10 @@ void loop(char c[3][3]){
         mostrar_tablero(c);
 
     if(j == 0)
-        printf("Has ganado!! \n\n");
-    else if(j == 1)
-        printf("Mala suerte! Perdiste!! \n\n");
-    else if(j == 2)
+        printf("Ha ganado %s!! \n\n", jugador1);
+    if(j == 1)
+        printf("Ha ganado %s!! \n\n", jugador2);
+    if(j == 2)
         printf("Hubo un empate! \n\n");
 
 }
@@ -71,7 +75,7 @@ void mostrar_tablero(char c[3][3]){
     printf("\n\n");
 }
 
-void poner_ficha(char c[3][3]){
+void poner_ficha(char c[3][3], char ficha){
     int i, j, k;
     char auxiliar;
 
@@ -151,27 +155,10 @@ void poner_ficha(char c[3][3]){
         }
     }while(k == 1);
 
-    c[i][j] = 'X';
-}
-
-void intro_IA(char c[3][3]){
-    int i, j, k;
-
-    srand(time(NULL));
-
-    do{
-        i = rand() % 3;
-        j = rand() % 3;
-        k = 0;
-        if(c[i][j] == 'X' || c[i][j] == 'O')
-            k = 1;
-    }while(k == 1);
-
-    c[i][j] = 'O';
+    c[i][j] = ficha;
 }
 
 int ganador(char c[3][3]){
-
     if(c[0][0] == 'X' || c[0][0] == 'O'){
         if(c[0][0] == c[0][1] && c[0][0] == c[0][2])
             return (c[0][0] == 'X') ? 0 : 1; // Devuelve 0 si ganamos
@@ -195,8 +182,7 @@ int ganador(char c[3][3]){
     }
 
     if(c[2][2] == 'X' || c[2][2] == 'O'){
-        if(c[2][2]
-            == c[2][0] && c[2][2] == c[2][1])
+        if(c[2][2] == c[2][0] && c[2][2] == c[2][1])
             return (c[2][2] == 'X') ? 0 : 1;
 
         if(c[2][2] == c[0][2] && c[2][2] == c[1][2])

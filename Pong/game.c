@@ -16,9 +16,9 @@ void marcar_borde(char campo[V][H]){
 
     for(i = 0; i < V; i++){
         for(j = 0; j < H; j++){
-            if(i == 0 || i == V-1)
+            if(i == 0 || i == V - 1)
                 campo[i][j] = '-';
-            else if(j == 0 || j == H-1)
+            else if(j == 0 || j == H - 1)
                 campo[i][j] = '|';
             else
                 campo[i][j] = ' ';
@@ -83,10 +83,10 @@ void input(char campo[V][H], int *pelX, int *pelY, int *iniJug, int *finJug, int
     char key;
 
     // Verificaciones
-    if(*pelY == 1 || *pelY == V-2)
+    if(*pelY == 1 || *pelY == V - 2)
         *modY *= -1;
 
-    if(*pelX == 1 || *pelX == H-2)
+    if(*pelX == 1 || *pelX == H - 2)
         *gol = 1;
 
     if(*pelX == 4)
@@ -99,7 +99,7 @@ void input(char campo[V][H], int *pelX, int *pelY, int *iniJug, int *finJug, int
             if(i == (*pelY))
                 *modX *= -1;
 
-    if(*iniIA == 1 || *finIA == V-1)
+    if(*iniIA == 1 || *finIA == V - 1)
         *modIA *= -1;
 
     // Modificaciones
@@ -118,14 +118,14 @@ void input(char campo[V][H], int *pelX, int *pelY, int *iniJug, int *finJug, int
     if(kbhit() == 1){
         key = getch();
 
-        if(key == '8'){
+        if(key == 'w'){
             if(*iniJug != 1){
                 *iniJug -= 1;
                 *finJug -= 1;
             }
         }
 
-        if(key == '2'){
+        if(key == 's'){
             if(*finJug != V-1){
                 *iniJug += 1;
                 *finJug += 1;
